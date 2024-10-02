@@ -21,7 +21,7 @@
     "url": "https://github.com/Woronokin/frontend-project-11/issues"
   },
   "homepage": "https://github.com/Woronokin/frontend-project-11#readme",
-  "devDependencies": {
+ "devDependencies": {
     "@babel/core": "^7.24.6",
     "@babel/eslint-parser": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
@@ -46,6 +46,9 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "i18next": "^23.11.5",
+    "on-change": "^5.0.1",
+    "yup": "^1.4.0"
   }
 }
