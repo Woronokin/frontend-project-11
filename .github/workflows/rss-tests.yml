@@ -1,4 +1,4 @@
-name: RSS Tests
+name: RSS-Tests
 on:
   push:
     branches:
