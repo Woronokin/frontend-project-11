@@ -1,8 +1,8 @@
 import i18next from 'i18next';
 import axios from 'axios';
-import watch from './view';
-import validate from './validator';
-import parseRss from './rssParser';
+import watch from './view.js';
+import validate from './validator.js';
+import parseRss from './rssParser.js';
 import resources from './lang/langs.js';
 
 const language = 'ru';
