@@ -1,13 +1,15 @@
 import onChange from 'on-change';
 
 const clearMessage = (paragraph) => {
-  paragraph.classList.remove('text-danger');
-  paragraph.classList.remove('text-success');
-  paragraph.textContent = '';
+  const updatedParagraph = paragraph;
+  updatedParagraph.classList.remove('text-danger');
+  updatedParagraph.classList.remove('text-success');
+  updatedParagraph.textContent = '';
 };
 
 const showMessage = (paragraph, message) => {
-  paragraph.textContent = message;
+  const updatedParagraph = paragraph;
+  updatedParagraph.textContent = message;
 };
 
 const showErrorMessage = (paragraph, error, i18nextInstance) => {
@@ -71,7 +73,8 @@ const createCardUl = (buttonName, entityType, i18nextInstance) => {
 };
 
 const clearDiv = (div) => {
-  div.innerHTML = '';
+  const updatedDiv = div;
+  updatedDiv.innerHTML = '';
 };
 
 const showFeeds = (div, state, i18nextInstance) => {
