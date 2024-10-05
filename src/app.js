@@ -31,6 +31,12 @@ const app = (selectors, initState, i18nextInstance, axiosInstance) => {
         watchedState.feeds = [...watchedState.feeds, { url, ...feed }];
         watchedState.posts = [...watchedState.posts, ...posts];
         watchedState.sendingProcess.status = 'added';
+
+        // Сбрасываем ошибку и стили поля
+        watchedState.form.isValid = true;
+        watchedState.form.error = null;
+
+        selectors.form.input.classList.remove('is-invalid'); // убираем ошибку
       })
       .catch((error) => {
         watchedState.sendingProcess.errors = errorsCodes[error.code] ?? error;
@@ -44,6 +50,9 @@ const app = (selectors, initState, i18nextInstance, axiosInstance) => {
     const urls = state.feeds.map((feed) => feed.url);
     validate(url, urls)
       .then(() => {
+        watchedState.form.isValid = true;
+        watchedState.form.error = null;
+
         watchedState.sendingProcess.status = 'loading';
         getFeedRequest(url);
       })
