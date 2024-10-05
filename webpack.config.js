@@ -13,6 +13,9 @@ const config = {
   devServer: {
     open: true,
     host: 'localhost',
+    client: {
+      overlay: false, // Отключает iframe от dev-server'а
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
