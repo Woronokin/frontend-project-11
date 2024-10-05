@@ -14,16 +14,13 @@ const config = {
     open: true,
     host: 'localhost',
     client: {
-      overlay: false, // Отключает iframe от dev-server'а
+      overlay: false,
     },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
     rules: [
@@ -37,18 +34,8 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
 };

@@ -31,12 +31,10 @@ const app = (selectors, initState, i18nextInstance, axiosInstance) => {
         watchedState.feeds = [...watchedState.feeds, { url, ...feed }];
         watchedState.posts = [...watchedState.posts, ...posts];
         watchedState.sendingProcess.status = 'added';
-
-        // Сбрасываем ошибку и стили поля
         watchedState.form.isValid = true;
         watchedState.form.error = null;
 
-        selectors.form.input.classList.remove('is-invalid'); // убираем ошибку
+        selectors.form.input.classList.remove('is-invalid');
       })
       .catch((error) => {
         watchedState.sendingProcess.errors = errorsCodes[error.code] ?? error;
