@@ -37,7 +37,8 @@ const app = (selectors, initState, i18nextInstance, axiosInstance) => {
         selectors.form.input.classList.remove('is-invalid');
       })
       .catch((error) => {
-        watchedState.sendingProcess.errors = errorsCodes[error.code] ?? error;
+        watchedState.sendingProcess.status = 'failed';
+        watchedState.sendingProcess.errors = errorsCodes[error.code] ?? new Error('rss.invalid');
       });
   };
 
@@ -55,6 +56,7 @@ const app = (selectors, initState, i18nextInstance, axiosInstance) => {
         getFeedRequest(url);
       })
       .catch((error) => {
+        watchedState.sendingProcess.status = 'failed';
         watchedState.form.error = error;
         watchedState.form.isValid = false;
       });
